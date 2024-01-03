@@ -12,5 +12,7 @@
   "О сайте": "About us",
   "toggle": "toggle",
   "Короткий язык": "En",
-  "Authorization": "Authorization"
+  "Authorization": "Authorization",
+  "increment": "increment",
+  "decrement": "decrement"
 }

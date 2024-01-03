@@ -2,6 +2,8 @@
   "": "",
   "Authorization": "Authorization",
   "content": "content",
+  "decrement": "decrement",
+  "increment": "increment",
   "throw error": "throw error",
   "toggle": "toggle",
   "Главная": "Главная",
