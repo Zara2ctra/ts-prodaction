@@ -2,15 +2,15 @@
   "comments": [
     {
       "body": "some comment",
-      "postId": "1",
-      "id": 1
+      "id": 1,
+      "postId": "1"
     }
   ],
-  "posts": [
-    { "author": "typicode",  "id": 2,  "title": "json-server 1" },
-    { "author": "typicode",  "id": 1,  "title": "json-server 2 " },
-    { "author": "typicode",  "id": 3,  "title": "json-server3 " },
-    { "author": "typicode",  "id": 4,  "title": "json-server4 " }
+  "users": [
+    { "id": 1,  "username": "admin",  "password": "123" },
+    { "id": 2,  "username": "dawda",  "password": "123" },
+    { "id": 3,  "username": "231sa2",  "password": "123" },
+    { "id": 4,  "username": "dawd12a",  "password": "123" }
   ],
   "profile": {
     "name": "json-server"
