@@ -3,8 +3,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Navbar } from './Navbar';
-import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
 
 export default {
     title: 'widget/Navbar',
@@ -27,11 +27,11 @@ Dark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
 AuthNavbar.decorators = [StoreDecorator({
-    user: {authData: {}}
+    user: { authData: {} },
 })];
 
 export const AuthNavbarDark = Template.bind({});
 AuthNavbarDark.args = {};
 AuthNavbarDark.decorators = [StoreDecorator({
-    user: {authData: {}}
+    user: { authData: {} },
 }), ThemeDecorator(Theme.DARK)];

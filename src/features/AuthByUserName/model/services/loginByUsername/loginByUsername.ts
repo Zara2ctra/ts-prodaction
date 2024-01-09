@@ -9,8 +9,8 @@ interface LoginByUsernameProps {
 }
 
 enum LoginErrors {
-    INCORRECT_DATA = "",
-    SERVER_ERROR = "",
+    INCORRECT_DATA = '',
+    SERVER_ERROR = '',
 
 }
 
