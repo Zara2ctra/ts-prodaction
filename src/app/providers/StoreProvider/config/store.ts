@@ -1,4 +1,4 @@
-import {configureStore, DeepPartial, ReducersMapObject} from '@reduxjs/toolkit';
+import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import loginForm from 'features/AuthByUserName/ui/LoginForm/LoginForm';
