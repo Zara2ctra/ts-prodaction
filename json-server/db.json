@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Saveliy",
+    "lastname": "Letov",
+    "age": 24,
+    "currency": "GEL",
+    "county": "Georgia",
+    "city": "Kutaisi",
+    "username": "admin",
+    "avatar": "https://img.lovepik.com/photo/20211202/medium/lovepik-business-man-holding-laptop-picture_501413381.jpg"
+  }
 }

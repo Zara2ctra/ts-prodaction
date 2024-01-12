@@ -1,7 +1,7 @@
-import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
-import loginForm from 'features/AuthByUserName/ui/LoginForm/LoginForm';
+import { useDispatch } from 'react-redux';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 
@@ -25,6 +25,7 @@ export function createReduxStore(
 
     // @ts-ignore
     store.reducerManager = reducerManager;
-
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
