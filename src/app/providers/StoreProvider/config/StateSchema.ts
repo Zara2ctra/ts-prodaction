@@ -3,7 +3,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUserName';
 import { ProfileSchema } from 'entities/Profile';
 import {
-    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
+    AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions } from 'react-router';
@@ -25,16 +25,17 @@ export interface ReducerManager {
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
 }
+
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager:ReducerManager
+    reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
-    api: AxiosInstance,
-    navigate: (to: To, options?: NavigateOptions) => void,
+    api: AxiosInstance;
+    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {
-    rejectValue: T,
-    extra: ThunkExtraArg,
+    rejectValue: T;
+    extra: ThunkExtraArg;
 }
