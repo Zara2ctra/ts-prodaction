@@ -28,7 +28,7 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
     useEffect(() => {
@@ -40,13 +40,14 @@ export const Modal = (props: ModalProps) => {
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
-            timeRef.current = setTimeout(() => {
+            timerRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
 
+    // Новые ссылки!!!
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
@@ -63,7 +64,7 @@ export const Modal = (props: ModalProps) => {
         }
 
         return () => {
-            clearTimeout(timeRef.current);
+            clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
@@ -73,7 +74,7 @@ export const Modal = (props: ModalProps) => {
         [cls.isClosing]: isClosing,
     };
 
-    if (lazy && !isOpen) {
+    if (lazy && !isMounted) {
         return null;
     }
 

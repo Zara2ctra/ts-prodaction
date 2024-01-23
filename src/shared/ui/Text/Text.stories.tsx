@@ -16,50 +16,42 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    title: 'Title loren ipsun',
-    text: 'text loren ipsun text loren ipsun',
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-    title: 'Title loren ipsun',
-    text: 'text loren ipsun text loren ipsun',
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
     theme: TextTheme.ERROR,
 };
 
-export const PrimaryOnlyTitle = Template.bind({});
-PrimaryOnlyTitle.args = {
-    title: 'Title loren ipsun',
+export const onlyTitle = Template.bind({});
+onlyTitle.args = {
+    title: 'Title lorem ipsun',
 };
 
-export const PrimaryOnlyText = Template.bind({});
-PrimaryOnlyText.args = {
-    text: 'text loren ipsun text loren ipsun',
+export const onlyText = Template.bind({});
+onlyText.args = {
+    text: 'Description Description Description Description',
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-    title: 'Title loren ipsun',
-    text: 'text loren ipsun text loren ipsun',
+export const PrimaryDark = Template.bind({});
+PrimaryDark.args = {
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const ErrorDark = Template.bind({});
-ErrorDark.args = {
-    title: 'Title loren ipsun',
-    text: 'text loren ipsun text loren ipsun',
-    theme: TextTheme.ERROR,
+export const onlyTitleDark = Template.bind({});
+onlyTitleDark.args = {
+    title: 'Title lorem ipsun',
 };
-ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const DarkOnlyTitle = Template.bind({});
-DarkOnlyTitle.args = {
-    title: 'Title loren ipsun',
+export const onlyTextDark = Template.bind({});
+onlyTextDark.args = {
+    text: 'Description Description Description Description',
 };
-DarkOnlyTitle.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const DarkOnlyText = Template.bind({});
-DarkOnlyText.args = {
-    text: 'text loren ipsun text loren ipsun',
-};
-DarkOnlyText.decorators = [ThemeDecorator(Theme.DARK)];
+onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -6,8 +6,8 @@ const MainPage = () => {
     const { t } = useTranslation();
     const [value, setValue] = useState('');
 
-    const onChange = (value: string) => {
-        setValue(value);
+    const onChange = (val: string) => {
+        setValue(val);
     };
 
     return (

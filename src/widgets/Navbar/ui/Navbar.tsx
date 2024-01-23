@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import React, { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { memo, useCallback, useState } from 'react';
-import { LoginModal } from 'features/AuthByUserName';
+import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
@@ -50,7 +50,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 className={cls.links}
                 onClick={onShowModal}
             >
-                {t('Авторизация')}
+                {t('Войти')}
             </Button>
             {isAuthModal && (
                 <LoginModal

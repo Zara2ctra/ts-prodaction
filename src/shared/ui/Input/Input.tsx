@@ -1,6 +1,6 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
-    InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState,
+    InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import cls from './Input.module.scss';
 
@@ -25,10 +25,9 @@ export const Input = memo((props: InputProps) => {
         readonly,
         ...otherProps
     } = props;
-
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
-    const [carriagePosition, setCarriagePosition] = useState(0);
+    const [caretPosition, setCaretPosition] = useState(0);
 
     const isCaretVisible = isFocused && !readonly;
 
@@ -41,7 +40,7 @@ export const Input = memo((props: InputProps) => {
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
-        setCarriagePosition(e.target.value.length);
+        setCaretPosition(e.target.value.length);
     };
 
     const onBlur = () => {
@@ -53,7 +52,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     const onSelect = (e: any) => {
-        setCarriagePosition(e?.target?.selectionStart || 0);
+        setCaretPosition(e?.target?.selectionStart || 0);
     };
 
     const mods: Mods = {
@@ -67,7 +66,7 @@ export const Input = memo((props: InputProps) => {
                     {`${placeholder}>`}
                 </div>
             )}
-            <div className={cls.carriageWrapper}>
+            <div className={cls.caretWrapper}>
                 <input
                     ref={ref}
                     type={type}
@@ -82,8 +81,8 @@ export const Input = memo((props: InputProps) => {
                 />
                 {isCaretVisible && (
                     <span
-                        className={cls.carriage}
-                        style={{ left: `${carriagePosition * 9}px` }}
+                        className={cls.caret}
+                        style={{ left: `${caretPosition * 9}px` }}
                     />
                 )}
             </div>

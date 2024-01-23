@@ -24,8 +24,8 @@ interface TextProps {
 export const Text = memo((props: TextProps) => {
     const {
         className,
-        title,
         text,
+        title,
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
     } = props;

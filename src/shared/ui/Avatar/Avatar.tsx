@@ -9,17 +9,15 @@ interface AvatarProps {
     alt?: string;
 }
 
-export const Avatar = (props: AvatarProps) => {
-    const {
-        className, src, size, alt,
-    } = props;
+export const Avatar = ({
+    className, src, size, alt,
+}: AvatarProps) => {
+    const mods: Mods = {};
 
     const styles = useMemo<CSSProperties>(() => ({
-        width: size || 150,
-        height: size || 150,
+        width: size || 100,
+        height: size || 100,
     }), [size]);
-
-    const mods: Mods = {};
 
     return (
         <img

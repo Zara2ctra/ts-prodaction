@@ -1,7 +1,5 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import AvatarImg from './storybook.jpg';
 
@@ -21,14 +19,8 @@ Primary.args = {
     src: AvatarImg,
 };
 
-export const Big = Template.bind({});
-Big.args = {
-    size: 400,
-    src: AvatarImg,
-};
-
 export const Small = Template.bind({});
 Small.args = {
-    size: 75,
+    size: 50,
     src: AvatarImg,
 };

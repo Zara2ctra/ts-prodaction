@@ -12,11 +12,9 @@ interface CurrencySelectProps {
 }
 
 const options = [
-    { value: Currency.GEL, content: Currency.GEL },
-    { value: Currency.BYN, content: Currency.BYN },
+    { value: Currency.RUB, content: Currency.RUB },
     { value: Currency.EUR, content: Currency.EUR },
     { value: Currency.USD, content: Currency.USD },
-    { value: Currency.ZL, content: Currency.ZL },
 ];
 
 export const CurrencySelect = memo(({
@@ -31,7 +29,7 @@ export const CurrencySelect = memo(({
     return (
         <Select
             className={classNames('', {}, [className])}
-            label={t('Ваша валюта')}
+            label={t('Укажите валюту')}
             options={options}
             value={value}
             onChange={onChangeHandler}

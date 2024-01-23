@@ -4,7 +4,7 @@ import { Select } from 'shared/ui/Select/Select';
 import { memo, useCallback } from 'react';
 import { Country } from '../../model/types/country';
 
-interface CountySelectProps {
+interface CountrySelectProps {
     className?: string;
     value?: Country;
     onChange?: (value: Country) => void;
@@ -13,16 +13,15 @@ interface CountySelectProps {
 
 const options = [
     { value: Country.Armenia, content: Country.Armenia },
+    { value: Country.Russia, content: Country.Russia },
     { value: Country.Belarus, content: Country.Belarus },
-    { value: Country.Georgia, content: Country.Georgia },
     { value: Country.Kazakhstan, content: Country.Kazakhstan },
-    { value: Country.Poland, content: Country.Poland },
     { value: Country.Ukraine, content: Country.Ukraine },
 ];
 
 export const CountrySelect = memo(({
     className, value, onChange, readonly,
-}: CountySelectProps) => {
+}: CountrySelectProps) => {
     const { t } = useTranslation();
 
     const onChangeHandler = useCallback((value: string) => {
@@ -32,7 +31,7 @@ export const CountrySelect = memo(({
     return (
         <Select
             className={classNames('', {}, [className])}
-            label={t('Ваша страна')}
+            label={t('Укажите страну')}
             options={options}
             value={value}
             onChange={onChangeHandler}

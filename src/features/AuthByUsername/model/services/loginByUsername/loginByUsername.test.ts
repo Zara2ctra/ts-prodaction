@@ -10,36 +10,32 @@ describe('loginByUsername.test', () => {
     //     dispatch = jest.fn();
     //     getState = jest.fn();
     // });
-    //
-    // test('login success', async () => {
+
+    // test('success login', async () => {
     //     const userValue = { username: '123', id: '1' };
     //     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
     //     const action = loginByUsername({ username: '123', password: '123' });
-    //     // @ts-ignore
     //     const result = await action(dispatch, getState, undefined);
     //
     //     expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
     //     expect(dispatch).toHaveBeenCalledTimes(3);
     //     expect(mockedAxios.post).toHaveBeenCalled();
     //     expect(result.meta.requestStatus).toBe('fulfilled');
-    //     expect(result.payload).toBe(userValue);
+    //     expect(result.payload).toEqual(userValue);
     // });
     //
-    // test('login error', async () => {
+    // test('error login', async () => {
     //     mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
     //     const action = loginByUsername({ username: '123', password: '123' });
-    //     // @ts-ignore
     //     const result = await action(dispatch, getState, undefined);
     //
-    //     expect(mockedAxios.post).toHaveBeenCalled();
     //     expect(dispatch).toHaveBeenCalledTimes(2);
+    //     expect(mockedAxios.post).toHaveBeenCalled();
     //     expect(result.meta.requestStatus).toBe('rejected');
     //     expect(result.payload).toBe('error');
     // });
-});
 
-describe('loginByUsername.test with TestAsyncThunk', () => {
-    test('login success', async () => {
+    test('success login', async () => {
         const userValue = { username: '123', id: '1' };
 
         const thunk = new TestAsyncThunk(loginByUsername);
@@ -50,16 +46,16 @@ describe('loginByUsername.test with TestAsyncThunk', () => {
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(thunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
-        expect(result.payload).toBe(userValue);
+        expect(result.payload).toEqual(userValue);
     });
 
-    test('login error', async () => {
+    test('error login', async () => {
         const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk({ username: '123', password: '123' });
 
-        expect(thunk.api.post).toHaveBeenCalled();
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
+        expect(thunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toBe('error');
     });
